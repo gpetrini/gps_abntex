@@ -175,15 +175,15 @@
   \renewcommand{\epigraphname}{Epigraph}
   \renewcommand{\dedicatorianame}{Dedication}
   \renewcommand{\errataname}{Errata sheet}
-  \renewcommand{\agradecimentosname}{Acknowledgements}
+  \renewcommand{\agradecimentosname}{Agradecimentos}
   \renewcommand{\anexoname}{ANNEX}
   \renewcommand{\anexosname}{Annex}
   \renewcommand{\apendicename}{APPENDIX}
   \renewcommand{\apendicesname}{Appendix}
-  \renewcommand{\orientadorname}{Supervisor:}
-  \renewcommand{\coorientadorname}{Co-supervisor:}
+  \renewcommand{\orientadorname}{Orientador:}
+  \renewcommand{\coorientadorname}{Co-orientadora:}
   \renewcommand{\folhadeaprovacaoname}{Approval}
-  \renewcommand{\resumoname}{Abstract} 
+  \renewcommand{\resumoname}{Resumo} 
   \renewcommand{\listadesiglasname}{List of abbreviations and acronyms}
   \renewcommand{\listadesimbolosname}{List of symbols}
   \renewcommand{\fontename}{Source}

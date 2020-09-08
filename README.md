@@ -1,4 +1,10 @@
-# abntex2
+# gps_abntex
+
+Este é um fork do **abnTeX2** em que foram feitas algumas modificações para antender algumas das minhas nacessidades. Todo crédito é, evidentemente, dos contribuidores do **abnTeX2**.
+
+Adicionalmente, forem criados alguns scripts para facilitar a compatibilidade deste repositórico com a minha instalação do LaTeX.
+
+# abnTeX2
 
 O **abnTeX2**, evolução do abnTeX (_ABsurd Norms for TeX_`*`), é uma suíte para LaTeX que atende os requisitos das normas da ABNT (Associação Brasileira de Normas Técnicas) para elaboração de documentos técnicos e científicos brasileiros, como artigos científicos, relatórios técnicos, trabalhos acadêmicos como teses, dissertações, projetos de pesquisa e outros documentos do gênero.
 

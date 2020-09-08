@@ -1,5 +1,5 @@
-%% abntex2.cls, v<VERSION> laurocesar
-%% Copyright 2012-<COPYRIGHT_YEAR> by abnTeX2 group at https://www.abntex.net.br/ 
+%% gps_abnt.cls, v<VERSION> laurocesar
+%% Copyright 2012-<COPYRIGHT_YEAR> by gps_abnt group at https://www.abntex.net.br/ 
 %%
 %% This work may be distributed and/or modified under the
 %% conditions of the LaTeX Project Public License, either version 1.3
@@ -11,19 +11,19 @@
 %%
 %% This work has the LPPL maintenance status `maintained'.
 %% 
-%% The Current Maintainer of this work is the abnTeX2 team, led
+%% The Current Maintainer of this work is the gps_abnt team, led
 %% by Lauro César Araujo. Further information are available on 
 %% https://www.abntex.net.br/
 %%
-%% This work consists of the file abntex2.cls.
+%% This work consists of the file gps_abnt.cls.
 
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
-% Declaracao da classe abntex2 como uma extensao da classe memoir
+% Declaracao da classe gps_abnt como uma extensao da classe memoir
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{abntex2}[<CURRENT_DATE> v<VERSION> abnTeX2]
+\ProvidesClass{gpsabnt}[<CURRENT_DATE> v<VERSION> gpsabnt]
 \RequirePackage{ifthen}
 %
 % Captura as options article e twocolumn
@@ -137,7 +137,7 @@
 % ---
 \RequirePackage[brazil]{babel}
 %
-% Nomes constantes do abnTeX2 em portugues (definicoes padroes)
+% Nomes constantes do gps_abnt em portugues (definicoes padroes)
 \newcommand{\folhaderostoname}{Folha de rosto}
 \newcommand{\epigraphname}{Ep\'igrafe}
 \newcommand{\dedicatorianame}{Dedicat\'oria}
@@ -170,7 +170,7 @@
   \renewcommand{\paragraphautorefname}{subse{\c c}\~ao}
 }
 \addto\captionsenglish{% ingles
-  %% adjusts names from abnTeX2
+  %% adjusts names from gps_abnt
   \renewcommand{\folhaderostoname}{Title page}
   \renewcommand{\epigraphname}{Epigraph}
   \renewcommand{\dedicatorianame}{Dedication}
@@ -234,7 +234,7 @@
 % ---
 
 % ---
-% abnTeX2 name
+% gps_abnt name
 \newcommand{\abnTeX}{abn\TeX2}
 % ---
 

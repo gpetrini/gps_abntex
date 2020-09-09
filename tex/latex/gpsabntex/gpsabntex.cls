@@ -23,7 +23,7 @@
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{gpsabnt}[<CURRENT_DATE> v<VERSION> gpsabnt]
+\ProvidesClass{gpsabntex}[<CURRENT_DATE> v<VERSION> gpsabntex]
 \RequirePackage{ifthen}
 %
 % Captura as options article e twocolumn

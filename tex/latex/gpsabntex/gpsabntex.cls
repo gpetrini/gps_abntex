@@ -135,7 +135,7 @@
 % ---
 % Hifenizacao e caracteres especiais portugues-brasil por padrao
 % ---
-\RequirePackage[main=english]{babel} % 2020-09-09: Corrigindo problema de dois idiomas principais
+\RequirePackage[english]{babel} % 2020-09-09: Corrigindo problema de dois idiomas principais
 %
 % Nomes constantes do gps_abnt em portugues (definicoes padroes)
 \newcommand{\folhaderostoname}{Folha de rosto}

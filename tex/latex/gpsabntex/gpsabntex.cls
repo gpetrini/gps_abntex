@@ -135,7 +135,7 @@
 % ---
 % Hifenizacao e caracteres especiais portugues-brasil por padrao
 % ---
-\RequirePackage{babel} % 2020-09-09: Removida opção brazil - tese será em inglês
+\RequirePackage[brazil]{babel}
 %
 % Nomes constantes do gps_abnt em portugues (definicoes padroes)
 \newcommand{\folhaderostoname}{Folha de rosto}
@@ -175,15 +175,15 @@
   \renewcommand{\epigraphname}{Epigraph}
   \renewcommand{\dedicatorianame}{Dedication}
   \renewcommand{\errataname}{Errata sheet}
-  \renewcommand{\agradecimentosname}{Agradecimentos} % 2020-09-08: Alterado para se adequar à capa em portugês
+  \renewcommand{\agradecimentosname}{Agradecimentos}
   \renewcommand{\anexoname}{ANNEX}
   \renewcommand{\anexosname}{Annex}
   \renewcommand{\apendicename}{APPENDIX}
   \renewcommand{\apendicesname}{Appendix}
-  \renewcommand{\orientadorname}{Orientador:} % 2020-09-08: Alterado para se adequar à capa em portugês
-  \renewcommand{\coorientadorname}{Co-orientadora:} % 2020-09-08: Alterado para se adequar à capa em portugês
+  \renewcommand{\orientadorname}{Orientador:}
+  \renewcommand{\coorientadorname}{Co-orientadora:}
   \renewcommand{\folhadeaprovacaoname}{Approval}
-  \renewcommand{\resumoname}{Resumo} % 2020-09-08: Alterado para se adequar à capa em portugês
+  \renewcommand{\resumoname}{Resumo} 
   \renewcommand{\listadesiglasname}{List of abbreviations and acronyms}
   \renewcommand{\listadesimbolosname}{List of symbols}
   \renewcommand{\fontename}{Source}
@@ -647,7 +647,6 @@
 % Cabecalho do inicio do capitulo
 \makepagestyle{abntchapfirst}
 \makeoddhead{abntchapfirst}{}{}{\ABNTEXfontereduzida\thepage}
-\makeevenhead{abntchapfirst}{}{}{\ABNTEXfontereduzida\thepage} % 2020-09-09: Tal como feito na dissertação para homologação
 % ---
 
 % ---
@@ -749,7 +748,7 @@
 
 % ---
 % Ambiente para definicao da Capa
-\newenvironment{capa}{\begin{titlingpage}}{\end{titlingpage}} % 2020-09-09: Tentativa de remover página em branco após página de rosto
+\newenvironment{capa}{\begin{titlingpage}}{\end{titlingpage}\cleardoublepage}
 % ---
 
 % ---
@@ -763,11 +762,9 @@
 % Ficha catalografica (Dados internacionais de
 % catalogação-na-publicacao)
 \newenvironment{fichacatalografica}{%
-    \nopagebreak % 2020-09-09: Tal como dissertação para homologação
     \thispagestyle{empty}
     \begin{SingleSpacing}
       \ABNTEXfontereduzida
-     \nopagebreak % 2020-09-09: Tal como dissertação para homologação
 }{%   
     \end{SingleSpacing}%
 }%
@@ -783,12 +780,10 @@
 % ---
 % Folha de aprovacao - NBR 14724/2011 - 4.2.1.3
 \newenvironment{folhadeaprovacao}[1][\folhadeaprovacaoname]{%
-  \nopagebreak % 2020-09-09: Tal como dissertação para homologação
-  \thispagestyle{empty}
+   \clearpage%
    \PRIVATEbookmarkthis{#1}%
    \begin{Spacing}{1.0}
-     \nopagebreak
-}{\end{Spacing}} % 2020-09-09: Removido \PRIVATEclearpageifneeded. Caso necessário, incluir pós \end{Spacing} no {}
+}{\end{Spacing}\PRIVATEclearpageifneeded}   
 % ---
 
 % ---
@@ -797,15 +792,14 @@
    \ifthenelse{\equal{#1}{}}{%
     \PRIVATEbookmarkthis{\dedicatorianame}
     }{\pretextualchapter{#1}}
-  }{} % 2020-09-09: Removido \PRIVATEclearpageifneeded. Caso necessário, incluir no {}
+  }{\PRIVATEclearpageifneeded}
 % ---
 
 % ---
 % Agradecimentos
 \newenvironment{agradecimentos}[1][\agradecimentosname]{%
-        \pretextualchapter{#1}
-        \thispagestyle{empty} % 2020-09-09: Tal como dissertação para homologação
-}{} % 2020-09-09: Removido \PRIVATEclearpageifneeded. Caso necessário, incluir no {}
+   \pretextualchapter{#1}
+  }{\PRIVATEclearpageifneeded}
 % ---
 
 % ---
@@ -839,14 +833,11 @@
 }
 
 \newenvironment{resumo}[1][\resumoname]{%
-  \thispagestyle{empty} % 2020-09-09: Tal como dissertação para homologação
    \PRIVATEbookmarkthis{#1}
    \renewcommand{\abstractnamefont}{\chaptitlefont}
    \renewcommand{\abstractname}{\ABNTEXchapterupperifneeded{#1}}
    \begin{abstract}
-}{
-   \end{abstract}\PRIVATEclearpageifneeded
-}
+  }{\end{abstract}\PRIVATEclearpageifneeded}
   
 \newenvironment{resumoumacoluna}[1][\resumoname]{%
    \PRIVATEbookmarkthis{#1}
@@ -859,7 +850,6 @@
 % ---
 % Lista de abreviaturas e siglas
 \newenvironment{siglas}{%
-  	\thispagestyle{empty} % 2020-09-09: Tal como dissertação para homologação
   \pretextualchapter{\listadesiglasname}
   \begin{symbols}
 }{%
@@ -871,7 +861,6 @@
 % ---
 % Lista de simbolos
 \newenvironment{simbolos}{%
-    	\thispagestyle{empty} % 2020-09-09: Tal como dissertação para homologação
   \pretextualchapter{\listadesimbolosname}
   \begin{symbols}
 }{%
@@ -1073,8 +1062,8 @@
 %   página no caso de estar no modo twoside. Util para imprimir a Ficha
 %   Bibliografica. Porem, se estiver no modo oneside, a versao sem estrela
 %   é identica.
-\newenvironment{folhaderosto}[1][\folhaderostoname]{\PRIVATEbookmarkthis{#1}}{} % 2020-09-09: Tentativa de remover página em branco após
-\newenvironment{folhaderosto*}[1][\folhaderostoname]{\PRIVATEbookmarkthis{#1}}{}% % 2020-09-09: Tentativa de remover página em branco após página de rosto
+\newenvironment{folhaderosto}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\cleardoublepage}
+\newenvironment{folhaderosto*}[1][\folhaderostoname]{\clearpage\PRIVATEbookmarkthis{#1}}{\newpage}%
 
 % ---
 % Conteudo padrao da Folha de Rosto
@@ -1132,7 +1121,6 @@
    \@ifstar
      \imprimirfolhaderostostar  
      \imprimirfolhaderostonostar
-     \nopagebreak % 2020-09-09: Tentativa de remover folha em branco pós folha de rosto
 }
 \makeatother
 % ---
